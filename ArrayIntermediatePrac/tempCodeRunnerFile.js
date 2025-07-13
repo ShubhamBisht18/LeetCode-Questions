@@ -1,21 +1,18 @@
-function MissingNum(nums) {
-    let arr = [];
+function Duplicate(nums) {
+    let index = 0
+    let arr = [nums[index]]; 
 
     for (let i = 1; i < nums.length; i++) {
-
-        let prev = nums[i - 1];
-        let curr = nums[i];
-
-        // Check for gap between prev and curr
-        while (curr - prev > 1) {
-            prev++;
-            arr.push(prev);
+        if (nums[i] !== arr[index]) {
+            arr.push(nums[i]);
+            index++
         }
     }
 
     return arr;
 }
 
-let nums = [1,2,4,5]
-let result = MissingNum(nums)
-console.log(result)
+let nums = [1, 1, 2, 2, 3, 4, 4];
+let result = Duplicate(nums);
+console.log(result); 
+
