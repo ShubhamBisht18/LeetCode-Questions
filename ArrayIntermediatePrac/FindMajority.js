@@ -1,16 +1,27 @@
-// function Majority(nums){
-//     let index = 0
-//     let count =0
-//     let arr = [nums[index]]
-//     for (let i = 1; i < nums.length; i++) {
-//         if(arr[index] === nums[i]){
-//             count++ 
-//         }
-//         index++
-//     }
-//     return count
-// }
+function Majority(nums) {
+    let maxCount = 0;
+    let majorityElement = nums[0];
 
-// let nums = [2,2,1,1,1,2,2]
-// let result = Majority(nums)
-// console.log(result)
+    for (let i = 0; i < nums.length; i++) {
+        let current = nums[i];
+        let count = 0;
+
+        for (let j = 0; j < nums.length; j++) {
+            if (nums[j] === current) {
+                count++;
+            }
+        }
+
+        if (count > maxCount) {
+            maxCount = count;
+            majorityElement = current;
+        }
+    }
+
+    return [maxCount, majorityElement];
+}
+
+
+let nums = [2,2,1,1,5,1,3,1]
+let result = Majority(nums)
+console.log(result)
