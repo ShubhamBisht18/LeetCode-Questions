@@ -11,5 +11,5 @@ function removeDuplicate(nums){
 
 let nums = [1,1,2];
 const result = removeDuplicate(nums);
-// console.log(result);          
+console.log(result);          
 console.log(nums.slice(0, result)); 
